@@ -42,7 +42,7 @@ const QuemSomos = () => {
       </Left>
       <Line/>
       <Right>
-        Oi
+        A associação é responsável por cuidar da atenção aos idosos e ...
       </Right>
       
       

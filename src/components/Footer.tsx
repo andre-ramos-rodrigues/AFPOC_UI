@@ -14,6 +14,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   margin-right: 50px;
   font-size: 13px;
+  text-align: center;
 `
 
 const Footer = () => {

@@ -6,7 +6,7 @@ interface IUser {
   password: string 
 }
 
-const url = process.env.URL
+const url = process.env.REACT_APP_API_URL
 
 export const login = async ({ username, password } : IUser) => {
   try {

@@ -121,6 +121,9 @@ const SinglePost = ( ) => {
   const [novoTitulo, setNovoTitulo] = React.useState<any>('')
   const [novoResumo, setNovoResumo] = React.useState<any>('')
   const [novoTexto, setNovoTexto] = React.useState<any>('')
+  const url = process.env.REACT_APP_API_URL
+
+  const cloudName = process.env.REACT_APP_CLOUDNAME
 
   const location = useLocation()
   console.log(location)
@@ -129,7 +132,7 @@ const SinglePost = ( ) => {
 
   const Save = async() => {
     try {
-      const res = await axios.put(`http://localhost:5000/post/${path}`, {
+      const res = await axios.put(`${url}/post/${path}`, {
         titulo: novoTitulo, resumo: novoResumo, texto: novoTexto
       }, {withCredentials: true})
 
@@ -141,7 +144,7 @@ const SinglePost = ( ) => {
   }
   const handleDelete = async() => {
     try {
-      await axios.delete(`http://localhost:5000/post/${path}`, {
+      await axios.delete(`${url}/post/${path}`, {
         withCredentials: true
       })
       navigate('/postagens')
@@ -152,7 +155,7 @@ const SinglePost = ( ) => {
 
   React.useEffect(() => {
     const getPosts = async() => {
-      const res = await axios.get(`http://localhost:5000/post/${path}`)
+      const res = await axios.get(`${url}/post/${path}`)
       setPost(res.data)
 
       setNovoTitulo(res.data.titulo)
@@ -160,10 +163,10 @@ const SinglePost = ( ) => {
       setNovoTexto(res.data.texto)
     }
     getPosts()
-  }, [path])
+  }, [path, url])
 
   React.useEffect(() => {
-    if ( currentUser.username === post.autor) {
+    if ( currentUser?.username === post.autor) {
       setTitular(true)
     } else {
       setTitular(false)
@@ -184,7 +187,7 @@ const SinglePost = ( ) => {
             </Opcoes>
           )
         }
-        <ImgContainer><Img src={`http://localhost:5000/images/${post.img}`} alt=''/></ImgContainer>
+        <ImgContainer><Img src={`https://res.cloudinary.com/${cloudName}/image/upload/v1662744035/${post.img}.jpg`} alt=''/></ImgContainer>
         {
           edit ? (
             <InputTitulo type='text' name='titulo' placeholder={post.titulo} value={novoTitulo} onChange={(e) => setNovoTitulo(e.target.value)}/>

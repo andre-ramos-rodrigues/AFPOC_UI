@@ -72,24 +72,24 @@ const Home = () => {
   const { innerWidth: width } = window
   const [ num, setNum ] = React.useState<any>(4)
 
-  const url = process.env.URL + "/post"
+  const url = process.env.REACT_APP_API_URL
   
   React.useEffect(() => {
     const getPosts = async() => {
-      const res = await axios.get("http://localhost:5000/post")
+      const res = await axios.get(`${url}/post`)
       setPosts(res.data)
       setPosts((prev : any) => [...prev].sort((a,b) => a.createdAt - b.createdAt))
     }
 
     const getTunel = async() => {
-      const res = await axios.get('http://localhost:5000/tunel')
+      const res = await axios.get(`${url}/tunel`)
       setTunel(res.data)
       setTunel((prev : any) => [...prev].sort((a,b) => a.createdAt - b.createdAt))
     }
 
     getPosts()
     getTunel()
-  }, [])
+  }, [url])
   
   React.useEffect(() => {
     const handleResize = () => {

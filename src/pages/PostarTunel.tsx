@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Container = styled.div`
   background-color: whitesmoke;
@@ -90,8 +91,10 @@ const PostarTunel = () => {
   const [ ano, setAno ] = React.useState("")
   const [ mes, setMes ] = React.useState("")
   const [ dia, setDia ] = React.useState("")
+  const { currentUser} = useSelector((state : any) => state.user)
 
   const navigate = useNavigate()
+  const url = process.env.REACT_APP_API_URL
 
   const handleChange = (e: any) => {
     setInputs((prev : any) => {
@@ -115,16 +118,34 @@ const PostarTunel = () => {
         ano, mes, dia
       }
     }
-    const data =new FormData();
+
+    // saving the img locally with multer and sending the url to mongodb
+    // const data =new FormData();
     // creating the img url
-    const filename = Date.now() + img.name;
-    data.append("name", filename);
-    data.append("file", img);
+    // const filename = Date.now() + img.name;
+    // data.append("name", filename);
+    // data.append("file", img);
     // saving the img url in the newPost that will be sent to mongodb 
-    newPost.img = filename;
+    // newPost.img = filename;
+
+
+    // saving the img on Cloudinary
+    const formData = new FormData()
+    formData.append("file", img)
+    formData.append("api_key", "989846142342293")
+    formData.append("upload_preset", "afpoc123")
+
     try {
-      await axios.post('http://localhost:5000/api/upload', data)
-      const res = await axios.post('http://localhost:5000/tunel', newPost, {withCredentials: true})
+      const cloudinaryResponse = await axios.post(`https://api.cloudinary.com/v1_1/dmqnk9v0d/auto/upload`, formData, {
+     headers: { "Content-Type": "multipart/form-data"}
+  })
+      const storedImg = cloudinaryResponse.data
+      console.log(storedImg)
+      newPost.img = storedImg.public_id;
+      newPost.username = currentUser.username
+
+      //await axios.post(`${url}/api/upload`, formData)
+      const res = await axios.post(`${url}/tunel`, newPost, {withCredentials: true})
 
         res.status===200 && console.log("postado com sucesso")
         res.status===200 && navigate('/tunel')

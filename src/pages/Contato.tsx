@@ -43,7 +43,7 @@ const Contato = () => {
       <Wrapper>
         <Title>Quem somos</Title>
         <Card>
-          
+          A associação....
         </Card>
       </Wrapper>
     </Container>

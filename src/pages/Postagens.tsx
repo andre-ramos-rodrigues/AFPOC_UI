@@ -41,14 +41,15 @@ const Wrapper = styled.div`
 const Postagens = () => {
   const { currentUser } = useSelector((state: any) => state.user);
   const [ posts, setPosts] = React.useState<any>([])
+  const url = process.env.REACT_APP_API_URL
 
   React.useEffect(() => {
     const getPosts = async() => {
-      const res = await axios.get('http://localhost:5000/post')
+      const res = await axios.get(`${url}/post`)
       setPosts(res.data)
     }
     getPosts()
-  }, [posts])
+  }, [posts, url])
   return (
     <Container>
       <Header>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { screen, mobile, micro } from '../responsive'
 
+
 const Container = styled.div`
   height: 430px;
   width: 380px;
@@ -72,11 +73,14 @@ interface ICard {
 }
 
 const Card = ({ titulo, resumo, img, autor, data, id, url } : ICard) => {
+  const cloudName = process.env.REACT_APP_CLOUDNAME
+  //const site = process.env.REACT_APP_API_URL
+
   return (
     <Container>
       <Link to={`/${url}/${id}`} style={{ textDecoration: "none", color: 'inherit' }}>
         {
-          img && <Photo src={`http://localhost:5000/images/${img}`} alt=" "/>
+          img && <Photo src={`https://res.cloudinary.com/${cloudName}/image/upload/v1662744035/${img}.jpg`} alt=" "/>
         }
         <TextArea>
           <Title>{titulo}</Title>
