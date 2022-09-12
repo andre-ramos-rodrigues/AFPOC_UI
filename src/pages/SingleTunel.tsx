@@ -17,8 +17,8 @@ const Container = styled.div`
 const Wrapper = styled.div`
   margin: 10px 150px;
   ${screen({ margin: '10px 80px', padding: '15px 50px' })};
-  ${mobile({ margin: '10px 30px', padding: '8px 15px'})};
-  ${micro({ margin: '10px 20px', padding: '5px 10px'})};
+  ${mobile({ margin: '10px 30px', padding: '12px 20px'})};
+  ${micro({ margin: '10px 20px', padding: '9px 15px'})};
   background-color: white;
   width: 100%;
   padding: 25px 100px;
