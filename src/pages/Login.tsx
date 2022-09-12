@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginFailure, loginStart, loginSuccess, logout } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
+import { screen, mobile, micro } from '../responsive'
 
 
 const Container = styled.div`
@@ -14,8 +15,7 @@ const Container = styled.div`
   height: 74vh;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  min-width: 350px;
+  min-width: 100vw;
 `
 const Wrapper = styled.div`
   border: 4px solid #9df9ef;
@@ -23,16 +23,19 @@ const Wrapper = styled.div`
   height: 500px;
   width: 400px;
   padding: 15px;
+  ${mobile({ width: "250px", border: "none" })};
 `
 const MainTitle = styled.div`
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 40px;
+  ${mobile({ fontSize: "30px" })};
 `
 const Title = styled.div`
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 5px;
+  ${mobile({ fontSize: "16px" })};
 `
 const Input = styled.input`
   border: none;
@@ -42,6 +45,7 @@ const Input = styled.input`
   margin-bottom: 30px;
   font-size: 21px;
   padding: 8px;
+  ${mobile({ fontSize: "17px" })};
 `
 const Show = styled.div`
  display: flex;

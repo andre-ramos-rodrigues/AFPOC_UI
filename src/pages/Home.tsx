@@ -10,13 +10,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: whitesmoke;
-  min-height: 70vh;
-  min-width: 100%;
+  min-height: 74vh;
+  min-width: 100vw;
+  ${micro({ width: "350px" })};
 `
 const Wrapper = styled.div`
   margin: 0px 120px;
-  ${mobile({ margin: '10px' })};
-  ${screen({ margin: '20px' })};
+  ${mobile({ margin: '0px 0px' })};
+  ${screen({ margin: '20px 0px' })};
 `
 const Header = styled.div`
   display: flex;
