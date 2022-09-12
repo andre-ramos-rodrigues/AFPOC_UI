@@ -10,8 +10,7 @@ const Container = styled.div`
   background-color: whitesmoke;
   padding: 15px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-  ${micro({ width: '200px', padding: "0px" })};
-  ${mobile({ width: '260px' })};
+  ${micro({ padding: "0px" })};
 `
 const Wrapper = styled.div`
   
