@@ -22,9 +22,8 @@ const TextArea = styled.div`
   gap: 15px;
 `
 const Photo = styled.img`
-  width: 300px;
-  ${mobile({ width: '260px' })};
-  ${micro({ width: '200px' })};
+  width: 100%;
+  min-Width: 280px;
   height: 150px;
   border: none;
   margin-bottom: 5px;
