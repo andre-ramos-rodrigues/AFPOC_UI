@@ -11,8 +11,8 @@ const Container = styled.div`
   flex-direction: column;
   background-color: whitesmoke;
   min-height: 74vh;
-  min-width: 100vw;
-  ${micro({ width: "350px" })};
+  min-width: 350px;
+  width: 100%;
 `
 const Wrapper = styled.div`
   margin: 0px 120px;

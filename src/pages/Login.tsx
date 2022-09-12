@@ -15,7 +15,8 @@ const Container = styled.div`
   height: 74vh;
   justify-content: center;
   align-items: center;
-  min-width: 100vw;
+  min-width: 350px;
+  width: 100%;
 `
 const Wrapper = styled.div`
   border: 4px solid #9df9ef;
