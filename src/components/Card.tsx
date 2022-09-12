@@ -41,8 +41,7 @@ const Text = styled.p`
 const Info = styled.p`
   display: flex;
   justify-content: space-around;
-  margin-top: 6px;
-  ${mobile({ marginTop: '3px' })};
+  margin-top: 2px;
 `
 const Autor = styled.p`
   font-size: 16px;
@@ -89,7 +88,7 @@ const Card = ({ titulo, resumo, img, autor, data, id, url } : ICard) => {
           <Text>{resumo}</Text>
           <Info>
             <Autor>{autor}</Autor>
-            <Data>{data}</Data>
+            <Data>{data && data}</Data>
           </Info>
         </TextArea>
       </Link>
