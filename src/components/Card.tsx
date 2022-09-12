@@ -41,6 +41,7 @@ const Info = styled.p`
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
+  ${mobile({ marginTop: '3px' })};
 `
 const Autor = styled.p`
   font-size: 16px;
