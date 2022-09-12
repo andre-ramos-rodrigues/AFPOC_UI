@@ -10,7 +10,7 @@ const Container = styled.div`
   background-color: whitesmoke;
   padding: 15px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-  ${micro({ padding: "0px", backgroundColor: "white"})};
+  ${micro({ padding: "0px", backgroundColor: "white", boxShadow: "none"})};
 `
 const Wrapper = styled.div`
   
