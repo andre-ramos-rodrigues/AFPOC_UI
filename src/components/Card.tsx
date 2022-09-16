@@ -88,7 +88,7 @@ const Card = ({ titulo, resumo, img, autor, data, id, url } : ICard) => {
           <Text>{resumo}</Text>
           <Info>
             <Autor>{autor}</Autor>
-            <Data>{data && data}</Data>
+            {data && <Data>{data}</Data>}
           </Info>
         </TextArea>
       </Link>
