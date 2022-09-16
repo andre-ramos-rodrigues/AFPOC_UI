@@ -28,6 +28,7 @@ const Photo = styled.img`
   margin-bottom: 5px;
   background-color: whitesmoke;
   border-radius: 12px
+  object-fit: cover;
 `
 const Title = styled.span`
   font-size: 18px;
