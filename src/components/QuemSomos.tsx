@@ -36,13 +36,14 @@ const QuemSomos = () => {
   return (
     <Container>
       <Left>
-        <Title>Associação Felicidade</Title>
-        <Bio>A associação é responsável por cuidar da atenção aos idosos e ...
+        <Title>Associação Felicidade do PAM Oswaldo Cruz</Title>
+        <Bio>Somos uma associação criada por idosos usuários do centro municipal de saúde no Rio de Janeiro, RJ.
+          Nosso objetivo é a promoção de saúde através da socialização, de atividades físicas e psicomotoras, palestras informativas e passeios.
       </Bio>
       </Left>
       <Line/>
       <Right>
-        A associação é responsável por cuidar da atenção aos idosos e ...
+        
       </Right>
       
       

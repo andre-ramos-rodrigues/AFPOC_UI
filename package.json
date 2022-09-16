@@ -2,7 +2,6 @@
   "name": "afpoc_site",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://afpoc-idoso.herokuapp.com",
   "dependencies": {
     "@cloudinary/react": "^1.4.2",
     "@cloudinary/url-gen": "^1.8.6",
