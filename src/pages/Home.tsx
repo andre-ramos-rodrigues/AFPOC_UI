@@ -110,7 +110,7 @@ const Home = () => {
       </Header>
       <Wrapper>
       <Content>
-      <Card>
+      <Card style={{height: "200px"}}>
         <SubTitle>
           <Link style={{color: 'inherit', textDecoration:'none'}} to='/contato'>Quem somos</Link>
         </SubTitle>
